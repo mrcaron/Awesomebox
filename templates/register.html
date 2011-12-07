@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register to be Awesome!</title>
+	</head>
+	<body>
+		<form action="add" method="post" enctype="multipart/form-data">
+			<fieldset>
+				<legend>User details</legend>
+				<ol>
+					<li>
+						<label for="uid">Name</label>
+						<input id="uid" type="text" name="uid" 
+						{{ 'value="%s"' % uid if uid }} 
+						size="50" placeholder="First name" required autofocus />
+					</li>
+					<li>
+						<label for="theme">Theme Song</label>
+						<input type="file" id="mp3" name="mp3" required/>
+					</li>
+				</ol>
+			</fieldset>
+
+			<button type="submit">Register!</button>
+		</form>
+	</body>
+</html>
