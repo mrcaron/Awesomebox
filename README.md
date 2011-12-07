@@ -4,7 +4,10 @@ Awesomebox - your herald of awesomeness
 Intro
 -----
 Awesomebox is a little Flask-based Python web app to play theme-song mp3s at the push of a button (bookmarked URL) for
-any time it's appropriate to broadcast your awesome skillz to your immediate area.
+any time it's appropriate to broadcast your awesome skillz to your immediate area. This is just a little thing I whipped
+up for fun while working, it's not robust, it's not altogether "finished" (i.e. there's more I want to add to it and
+error checking is lacking). But feel free to fork it and rock out some improvements. Please share your improvements
+via pull requests!
 
 Dependencies
 ------------
