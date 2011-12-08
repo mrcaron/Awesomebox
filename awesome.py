@@ -7,13 +7,16 @@ import os.path
 import os
 import shutil
 import eyeD3
+import pygame
 import pygame.mixer
+from pygame.locals import *
 import glob
 
 #import sqlite3
 
 THEME_SONGS = 'static/theme_songs'
 ALLOWED_EXTENSIONS = set(['mp3'])
+MUSIC_END = USEREVENT + 1
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -59,8 +62,12 @@ def awesome(username,themeId):
 
 	#print "calling mikehup mpg123 %s from %s &" % (mp3fname,os.getcwd());
 	#subprocess.call('mpg123 %s' % mp3fname, shell=True)
-	pygame.mixer.music.load(mp3fname)
-	pygame.mixer.music.play()
+	if pygame.mixer.music.get_busy():
+		pygame.mixer.music.queue(mp3fname)
+	else:
+		pygame.mixer.music.load(mp3fname)
+		pygame.mixer.music.play()
+		pygame.mixer.music.set_endevent(MUSIC_END)
 	return render_template('awesome.html', title=tag.getTitle(), uid=username)
 
 @app.route("/register")
