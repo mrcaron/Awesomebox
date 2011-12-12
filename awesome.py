@@ -113,6 +113,7 @@ def change():
 				f[1].save(new_fname)
 				if os.path.exists(new_fname):
 					shutil.copyfile(new_fname, fname)
+					os.remove(new_fname)
 					return redirect("/%s" % u.uid)
 				return "You no awesome. Try a file that works!"
 		return "%s isn't awesome. <a href=\"/register\">Reigster first</a>"
