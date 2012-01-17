@@ -36,3 +36,5 @@ Assuming that the sever is called **awesomebox**, visit:
    * Visit `http://awesomebox/<username>/1` to play your first themesong
 * Use your profile to change your themes or add new ones
    * `http://awesomebox/<username>` will take you to your profile page
+
+[![endorse](http://api.coderwall.com/mrcaron/endorsecount.png)](http://coderwall.com/mrcaron)
