@@ -15,7 +15,7 @@ Dependencies
 * [pygame](http://pygame.org) - to play theme songs
 * [sqlite3](http://sqlite.org) - to store user ids
 * [sqlalchemy](http://www.sqlalchemy.org) - to do queries in a cleaner way
-* [flask](http://flask.pocoo.com) - to serve up the app
+* [flask](http://flask.pocoo.org) - to serve up the app
 
 Setup
 -----
