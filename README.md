@@ -16,6 +16,7 @@ Dependencies
 * [sqlite3](http://sqlite.org) - to store user ids
 * [sqlalchemy](http://www.sqlalchemy.org) - to do queries in a cleaner way
 * [flask](http://flask.pocoo.com) - to serve up the app
+* [eyeD3](http://eyed3.nicfit.net/) - to handle mp3 metadata
 
 Setup
 -----
@@ -26,9 +27,10 @@ of the awesomebox to **"awesomebox"**.
 
 Usage
 -----
-Assuming that the sever is called **awesomebox**, visit:
+Assuming that the sever is called **awesomebox**:
 
-* [Register as a user](http://awesomebox/register)
+* Visit `http://awesomebox/init` to initialize the database
+* Visit `http://awesomebox/register` to register as a user
    * Add your name
    * Choose a theme song
    * Click *Register!*
