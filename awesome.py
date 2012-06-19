@@ -47,7 +47,7 @@ def profile(username):
 			tag.link(f)
 			mp3list.append([f, tag.getTitle()])
 		return render_template("profile.html", uid=u.uid, mp3s=mp3list)
-	return "%s is not an awesome user"
+	return "%s is not an awesome user" % username
 
 @app.route("/<username>/<themeId>")
 def awesome(username,themeId):
