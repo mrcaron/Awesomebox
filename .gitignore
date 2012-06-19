@@ -1,0 +1,4 @@
+*.pyc
+build
+static/theme_songs
+awesome.db

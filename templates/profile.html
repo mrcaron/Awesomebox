@@ -12,6 +12,8 @@
 			<fieldset>
 				<legend>Theme Songs</legend>
 				<ol>
+					<a href="{{ uid }}/random"><span style="font-weight:bold">Random song</span></a>
+					<p></p> <!-- empty p tag for lazy spacing -->
 					{% for mp3 in mp3s %}
 					<li>
 						<a href="/{{ uid }}/{{ loop.index }}"><span style="font-weight:bold">{{mp3[1]}}</span></a>&nbsp;

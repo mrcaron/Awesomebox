@@ -11,6 +11,7 @@ import pygame
 import pygame.mixer
 from pygame.locals import *
 import glob
+from random import choice
 
 #import sqlite3
 
@@ -47,7 +48,7 @@ def profile(username):
 			tag.link(f)
 			mp3list.append([f, tag.getTitle()])
 		return render_template("profile.html", uid=u.uid, mp3s=mp3list)
-	return "%s is not an awesome user"
+	return "%s is not an awesome user" % username
 
 @app.route("/<username>/<themeId>")
 def awesome(username,themeId):
@@ -55,8 +56,13 @@ def awesome(username,themeId):
 	usr = User.query.filter(User.uid == username).first()
 	if usr is None:
 		return "%s isn't registered to be AWESOME. :(" % username
-	
-	mp3fname = os.path.join(app.config['UPLOAD_FOLDER'], "%s_theme_%s.mp3" % (username,themeId))
+
+	if themeId == "random":
+		songs = glob.glob("%s/%s_theme_*.mp3" % (app.config['UPLOAD_FOLDER'], username))
+		mp3fname = choice(songs)
+	else:
+		mp3fname = os.path.join(app.config['UPLOAD_FOLDER'], "%s_theme_%s.mp3" % (username,themeId))
+
 	tag = eyeD3.Tag()
 	tag.link(mp3fname)
 
@@ -67,7 +73,9 @@ def awesome(username,themeId):
 	else:
 		pygame.mixer.music.load(mp3fname)
 		pygame.mixer.music.play()
-		pygame.mixer.music.set_endevent(MUSIC_END)
+
+		#this breaks the queue, disable or now
+		#pygame.mixer.music.set_endevent(MUSIC_END)
 	return render_template('awesome.html', title=tag.getTitle(), uid=username)
 
 @app.route("/register")
