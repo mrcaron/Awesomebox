@@ -40,3 +40,7 @@ Assuming that the sever is called **awesomebox**:
    * `http://awesomebox/<username>` will take you to your profile page
 
 [![endorse](http://api.coderwall.com/mrcaron/endorsecount.png)](http://coderwall.com/mrcaron)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mrcaron/awesomebox/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
